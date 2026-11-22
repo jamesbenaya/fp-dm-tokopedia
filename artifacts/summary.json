@@ -1,0 +1,244 @@
+{
+  "raw_rows": 5553,
+  "raw_cols": 25,
+  "raw_dup_rows": 40,
+  "raw_dup_product": 143,
+  "products_no_review": 1352,
+  "const_cols": [
+    "preorder",
+    "is_topads"
+  ],
+  "products_truncated": 493,
+  "prep_log": [
+    [
+      "Ulasan hasil parsing",
+      541402
+    ],
+    [
+      "Buang rating kosong",
+      541402
+    ],
+    [
+      "Buang duplikat review_id",
+      508708
+    ],
+    [
+      "Buang ulasan tanpa teks",
+      453720
+    ],
+    [
+      "Buang teks < 2 karakter setelah cleaning",
+      446741
+    ],
+    [
+      "Buang duplikat teks (cegah leakage antar split)",
+      323004
+    ]
+  ],
+  "n_reviews": 323004,
+  "n_products": 3785,
+  "pct_tidak_puas": 0.05199626010823395,
+  "rating_dist": {
+    "1": 6248,
+    "2": 3005,
+    "3": 7542,
+    "4": 18039,
+    "5": 288170
+  },
+  "class_counts": {
+    "puas": 306209,
+    "tidak_puas": 16795
+  },
+  "len_stats": {
+    "mean": {
+      "0": 10.64,
+      "1": 15.9
+    },
+    "median": {
+      "0": 8.0,
+      "1": 10.0
+    }
+  },
+  "time_range": [
+    "2015-11-11",
+    "2025-11-28"
+  ],
+  "split": [
+    [
+      "Train",
+      255834,
+      3028,
+      0.0516
+    ],
+    [
+      "Test",
+      67170,
+      757,
+      0.0536
+    ]
+  ],
+  "dummy": {
+    "accuracy": 0.946374869733512,
+    "f1_tidak_puas": 0.0,
+    "recall_tidak_puas": 0.0
+  },
+  "final_model": "LogReg (C=3)",
+  "threshold": 0.757206458628019,
+  "meta_gain_prauc": 0.00044399719919807623,
+  "test_metrics_thr": {
+    "accuracy": 0.9598928092898615,
+    "precision": 0.6079410366143604,
+    "recall": 0.70988339811216,
+    "f1": 0.654969262295082,
+    "f1_macro": 0.816839102743659,
+    "pr_auc": 0.6842567498554579,
+    "roc_auc": 0.9666123755882468
+  },
+  "test_metrics_default": {
+    "accuracy": 0.9430847104362067,
+    "precision": 0.4824964359258673,
+    "recall": 0.8456413103831205,
+    "f1": 0.6144225920322743,
+    "f1_macro": 0.7918486277420764,
+    "pr_auc": 0.6842567498554579,
+    "roc_auc": 0.9666123755882468
+  },
+  "test_base_rate": 0.05362513026648801,
+  "confusion_matrix": [
+    [
+      61919,
+      1649
+    ],
+    [
+      1045,
+      2557
+    ]
+  ],
+  "pred_by_rating": {
+    "1": 0.8399412628487518,
+    "2": 0.7387247278382582,
+    "3": 0.5873512836568566,
+    "4": 0.20827840759293434,
+    "5": 0.01437055625261397
+  },
+  "tfidf_params": {
+    "ngram_range": [
+      1,
+      2
+    ],
+    "min_df": 5,
+    "max_features": 100000,
+    "sublinear_tf": true
+  },
+  "comparison_oof": [
+    {
+      "Model": "LogReg + metadata",
+      "PR-AUC (OOF)": 0.6639,
+      "PR-AUC std antar-fold": 0.0197,
+      "ROC-AUC (OOF)": 0.9645,
+      "F1 terbaik": 0.6448,
+      "Precision": 0.5925,
+      "Recall": 0.7073
+    },
+    {
+      "Model": "LogReg (C=3)",
+      "PR-AUC (OOF)": 0.6634,
+      "PR-AUC std antar-fold": 0.0165,
+      "ROC-AUC (OOF)": 0.963,
+      "F1 terbaik": 0.6451,
+      "Precision": 0.6001,
+      "Recall": 0.6973
+    },
+    {
+      "Model": "LogReg (C=1)",
+      "PR-AUC (OOF)": 0.6629,
+      "PR-AUC std antar-fold": 0.0173,
+      "ROC-AUC (OOF)": 0.9645,
+      "F1 terbaik": 0.6433,
+      "Precision": 0.5828,
+      "Recall": 0.7179
+    },
+    {
+      "Model": "Linear SVM",
+      "PR-AUC (OOF)": 0.6473,
+      "PR-AUC std antar-fold": 0.0164,
+      "ROC-AUC (OOF)": 0.9613,
+      "F1 terbaik": 0.6363,
+      "Precision": 0.5786,
+      "Recall": 0.7067
+    },
+    {
+      "Model": "Complement NB",
+      "PR-AUC (OOF)": 0.5908,
+      "PR-AUC std antar-fold": 0.0155,
+      "ROC-AUC (OOF)": 0.9545,
+      "F1 terbaik": 0.5785,
+      "Precision": 0.498,
+      "Recall": 0.6901
+    }
+  ],
+  "comparison_test": [
+    {
+      "Model": "LogReg (C=3)",
+      "PR-AUC": 0.6843,
+      "F1": 0.655,
+      "Precision": 0.6079,
+      "Recall": 0.7099
+    },
+    {
+      "Model": "LogReg + metadata",
+      "PR-AUC": 0.6841,
+      "F1": 0.6558,
+      "Precision": 0.6022,
+      "Recall": 0.7199
+    },
+    {
+      "Model": "LogReg (C=1)",
+      "PR-AUC": 0.6823,
+      "F1": 0.6536,
+      "Precision": 0.5915,
+      "Recall": 0.7301
+    },
+    {
+      "Model": "Linear SVM",
+      "PR-AUC": 0.6685,
+      "F1": 0.6482,
+      "Precision": 0.5888,
+      "Recall": 0.721
+    },
+    {
+      "Model": "Complement NB",
+      "PR-AUC": 0.6103,
+      "F1": 0.5899,
+      "Precision": 0.503,
+      "Recall": 0.7129
+    }
+  ],
+  "themes": [
+    {
+      "tema": "Kualitas / kerusakan barang",
+      "pct_ulasan_tidak_puas": 0.2604,
+      "recall_model_pada_tema": 0.8571
+    },
+    {
+      "tema": "Salah / tidak lengkap",
+      "pct_ulasan_tidak_puas": 0.2551,
+      "recall_model_pada_tema": 0.7824
+    },
+    {
+      "tema": "Pengiriman lambat",
+      "pct_ulasan_tidak_puas": 0.1841,
+      "recall_model_pada_tema": 0.6652
+    },
+    {
+      "tema": "Layanan penjual",
+      "pct_ulasan_tidak_puas": 0.1546,
+      "recall_model_pada_tema": 0.8151
+    },
+    {
+      "tema": "Kemasan",
+      "pct_ulasan_tidak_puas": 0.1063,
+      "recall_model_pada_tema": 0.7415
+    }
+  ]
+}
